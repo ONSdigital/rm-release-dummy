@@ -31,7 +31,25 @@
 			<id>artifactory</id>
 		</profile>
 </profiles>
-
+    <build>
+        <plugins>
+<!--             <plugin> -->
+<!--                 <groupId>org.apache.maven.plugins</groupId> -->
+<!--                 <artifactId>maven-compiler-plugin</artifactId> -->
+<!--                 <version>2.3.2</version> -->
+<!--                 <configuration> -->
+<!--                     <source>${jdk.version}</source> -->
+<!--                     <target>${jdk.version}</target> -->
+<!--                     <encoding>${project.build.sourceEncoding}</encoding> -->
+<!--                 </configuration> -->
+<!--             </plugin> -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4.2</version>
+            </plugin>
+        </plugins>
+    </build>
 		<distributionManagement>
 			<repository>
 				<id>central</id>
