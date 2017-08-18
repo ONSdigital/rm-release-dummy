@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>uk.gov.ons.ctp.product</groupId>
 	<artifactId>rm-release-dummy</artifactId>
@@ -8,19 +9,41 @@
 		<connection>scm:git:git@github.com:ONSdigital/rm-release-dummy.git</connection>
 		<developerConnection>scm:git:git@github.com:ONSdigital/rm-release-dummy.git</developerConnection>
 		<url>git@github.com:ONSdigital/rm-release-dummy.git</url>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
-	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<name>libs-release</name>
-			<url>http://artifactory.rmdev.onsdigital.uk/artifactory/libs-release-local</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>libs-snapshots</name>
-			<url>http://artifactory.rmdev.onsdigital.uk/artifactory/libs-snapshot-local</url>
-		</snapshotRepository>
-	</distributionManagement>
+	<profiles>
+		<profile>
+			<repositories>
+				<repository>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<id>central</id>
+					<name>libs-release</name>
+					<url>http://artifactory.rmdev.onsdigital.uk/artifactory/libs-release-local</url>
+				</repository>
+				<repository>
+					<snapshots />
+					<id>snapshots</id>
+					<name>libs-snapshot</name>
+					<url>http://artifactory.rmdev.onsdigital.uk/artifactory/libs-snapshot-local</url>
+					</repository>
+			</repositories>
+			<id>artifactory</id>
+		</profile>
+</profiles>
+
+		<distributionManagement>
+			<repository>
+				<id>central</id>
+				<name>libs-release</name>
+				<url>http://artifactory.rmdev.onsdigital.uk/artifactory/libs-release-local</url>
+			</repository>
+			<snapshotRepository>
+				<id>snapshots</id>
+				<name>libs-snapshots</name>
+				<url>http://artifactory.rmdev.onsdigital.uk/artifactory/libs-snapshot-local</url>
+			</snapshotRepository>
+		</distributionManagement>
 </project>
