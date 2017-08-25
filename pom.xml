@@ -22,6 +22,12 @@
             <artifactId>maven-scm-provider-gitexe</artifactId>
             <version>1.9.4</version>
         </dependency>
+	  
+        <dependency>
+	   <artifactId>samplesvc-api</artifactId>
+  	   <version>10.45.0-SNAPSHOT</version>
+	   <groupId>uk.gov.ons.ctp.product</groupId>
+	</dependency>
 </dependencies>
 
 	<profiles>
